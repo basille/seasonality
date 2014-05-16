@@ -1,0 +1,23 @@
+seasonality 1.0
+===============
+
+NEW FUNCTIONS
+
+* `gap`, `plot.gap`: Gap statistic
+
+* `sPrint`: Print seasons
+
+* `sFormat`: Reorder the seasons
+
+* `sSimple`: Simplify the seasons
+
+* `sPlot`: Plot the seasons
+
+* `sBoxplot`: Season boxplots
+
+* `bsSeasons`, `bsWeights`, `bsCriterion`, `bsPlot`: Season bootstrap
+
+
+NEW DATASET
+
+* `caribou`: Data set used in Basille et al. (2012).
