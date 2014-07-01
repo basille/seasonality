@@ -1,6 +1,6 @@
 Package: seasonality
 Version: 1.0
-Date: 2013-03-04 
+Date: 2013-03-04
 Title: Define biological seasons
 Description: This package provides a set of functions to split year-round
     space-use measurements into biological seasons, completed with additional
