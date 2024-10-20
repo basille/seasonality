@@ -1,18 +1,24 @@
 Package: seasonality
-Version: 1.0
-Date: 2013-03-04
 Title: Define biological seasons
+Version: 1.0.1
+Date: 2024-10-20
+Authors@R: 
+    c(person(given = "Mathieu",
+             family = "Basille",
+             role = c("aut", "cre"),
+             email = "mathieu@basille.org",
+             comment = structure("0000-0001-9366-7127", .Names = "ORCID")))
+Depends:
+    cluster
 Description: This package provides a set of functions to split year-round
     space-use measurements into biological seasons, completed with additional
     functions to explore and simplify these seasons. Reference: Basille M.,
     Fortin D., Dussault C., Ouellet J.-P., Courtois R. Ecologically based
     definition of seasons clarifies predator-prey interactions. Ecography,
     early view. DOI: 10.1111/j.1600-0587.2011.07367.x
-Author: Mathieu Basille
-Maintainer: Mathieu Basille <basille@ase-research.org>
-Depends:
-    cluster
 License: GPL (>= 3)
-URL: http://ase-research.org/basille/seasonality/
-Collate:
-    'seasonality-package.r'
+Encoding: UTF-8
+LazyData: true
+URL: https://github.com/basille/seasonality
+BugReports: https://github.com/basille/seasonality/issues
+RoxygenNote: 7.3.2
