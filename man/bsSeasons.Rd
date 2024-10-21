@@ -78,9 +78,6 @@ set).
 \code{bsPlot} plots the result of the bootstrap procedure.
 }
 \examples{
-### Load the data
-data("caribou")
-
 ### Compute the bootstrap seasons:
 caribou$bs <- bsSeasons(data = caribou$move, ind = caribou$ind,
     nclust = 8)

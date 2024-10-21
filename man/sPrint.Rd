@@ -22,7 +22,6 @@ starts.
 Print a sequence of seasons in a friendly way.
 }
 \examples{
-data("caribou")
 set.seed(1)
 seasons <- kmeans(caribou$window, 8, iter.max = 100)$cluster
 sPrint(seasons)

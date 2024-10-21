@@ -32,9 +32,7 @@ caribou
 Caribou data set used in Basille et al. (2012).
 }
 \examples{
-## Load the caribou dataset:
-data("caribou")
-
+## We work with the caribou dataset.
 ## `caribou$window` can be retrieved from `caribou$move`:
 ##
 ## We first compute the weights for each individual-year:

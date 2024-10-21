@@ -143,7 +143,6 @@ plot(GG1)
 plot(GG2)
 
 ### Caribou data
-data("caribou")
 carigap <- gap(caribou$window)
 plot(carigap)
 }

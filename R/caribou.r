@@ -20,9 +20,7 @@
 ##'     interactions. Ecography, early view. DOI:
 ##'     10.1111/j.1600-0587.2011.07367.x
 ##' @examples
-##' ## Load the caribou dataset:
-##' data("caribou")
-##'
+##' ## We work with the caribou dataset.
 ##' ## `caribou$window` can be retrieved from `caribou$move`:
 ##' ##
 ##' ## We first compute the weights for each individual-year:

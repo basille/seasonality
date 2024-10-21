@@ -33,7 +33,6 @@ seasons.}
 Plot the seasons.
 }
 \examples{
-data("caribou")
 set.seed(1)
 seasons <- kmeans(caribou$window, 8, iter.max = 100)$cluster
 sPlot(sSimple(seasons))

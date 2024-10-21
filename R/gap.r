@@ -119,7 +119,6 @@
 ##' plot(GG2)
 ##'
 ##' ### Caribou data
-##' data("caribou")
 ##' carigap <- gap(caribou$window)
 ##' plot(carigap)
 gap <- function(data, from = 1, to = 10, nsim = 50, ref.dist = c("pc",

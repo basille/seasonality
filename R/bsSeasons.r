@@ -39,9 +39,6 @@
 ##' \code{seasons}, with the index of the clusters kept.
 ##' @export
 ##' @examples
-##' ### Load the data
-##' data("caribou")
-##'
 ##' ### Compute the bootstrap seasons:
 ##' caribou$bs <- bsSeasons(data = caribou$move, ind = caribou$ind,
 ##'     nclust = 8)

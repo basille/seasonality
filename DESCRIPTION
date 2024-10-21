@@ -9,7 +9,8 @@ Authors@R:
              email = "mathieu@basille.org",
              comment = structure("0000-0001-9366-7127", .Names = "ORCID")))
 Depends:
-    cluster
+    cluster,
+    R (>= 2.10)
 Description: This package provides a set of functions to split year-round
     space-use measurements into biological seasons, completed with additional
     functions to explore and simplify these seasons. Reference: Basille M.,
