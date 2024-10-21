@@ -10,10 +10,9 @@
 ##' season starts.
 ##' @return A vector indicating the dates at which a new season
 ##' starts.
-##' @author Mathieu Basille \email{basille@@ase-research.org}
 ##' @export
 ##' @examples
-##' data(caribou)
+##' data("caribou")
 ##' set.seed(1)
 ##' seasons <- kmeans(caribou$window, 8, iter.max = 100)$cluster
 ##' sPrint(seasons)

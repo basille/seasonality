@@ -21,10 +21,9 @@
 ##' to each clustering.
 ##' @param samescale Logical. In case of comparison, use the same
 ##' scale for common variables.
-##' @author Mathieu Basille \email{basille@@ase-research.org}
 ##' @export
 ##' @examples
-##' data(caribou)
+##' data("caribou")
 ##' set.seed(1)
 ##' seasons <- kmeans(caribou$window, 8, iter.max = 100)$cluster
 ##' sBoxplot(caribou$window, sSimple(seasons))

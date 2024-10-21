@@ -7,16 +7,7 @@
 \alias{bsPlot}
 \title{Season bootstrap}
 \usage{
-bsSeasons(
-  data,
-  ind,
-  dataNA,
-  nclust,
-  iter = 100,
-  simplify = FALSE,
-  win = 6,
-  tol = 2
-)
+bsSeasons(data, ind, nclust, iter = 100, simplify = FALSE, win = 3, tol = 1)
 
 bsWeights(bsSeasons)
 
@@ -31,9 +22,6 @@ run the bootstrap.}
 \item{ind}{A individual-year table indicating the name of the
 individual (column \code{id}), repeated as many times as
 monitoring periods.}
-
-\item{dataNA}{The data to use in case of NAs, since the k-means
-can not deal with NAs.}
 
 \item{nclust}{The number of clusters to apply to the k-means.}
 
@@ -91,12 +79,11 @@ set).
 }
 \examples{
 ### Load the data
-data(caribou)
+data("caribou")
 
-### Recompute the bootstrap seasons:
-\dontrun{
+### Compute the bootstrap seasons:
 caribou$bs <- bsSeasons(data = caribou$move, ind = caribou$ind,
-    dataNA = caribou$window, nclust = 8)}
+    nclust = 8)
 
 ### Compute the weights, and identify the final seasons:
 set.seed(1)
@@ -106,9 +93,4 @@ seasonsbs <- bsCriterion(seasons, weights, threshold = .8)
 
 ### Visualize the final seasons:
 bsPlot(seasonsbs, seasons, weights, title = "Caribou")
-}
-\author{
-Mathieu Basille
-
-Mathieu Basille \email{basille@ase-research.org}
 }

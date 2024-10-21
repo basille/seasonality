@@ -1,7 +1,7 @@
 Package: seasonality
 Title: Define biological seasons
 Version: 1.0.1
-Date: 2024-10-20
+Date: 2024-10-21
 Authors@R: 
     c(person(given = "Mathieu",
              family = "Basille",

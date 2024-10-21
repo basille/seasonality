@@ -101,7 +101,6 @@
 ##' R. (2012) Ecologically based definition of seasons clarifies
 ##' predator-prey interactions. Ecography, early view, DOI:
 ##' 10.1111/j.1600-0587.2011.07367.x
-##' @author Mathieu Basille \email{basille@@ase-research.org}
 ##' @export
 ##' @examples
 ##' ### Simple simulation
@@ -120,7 +119,7 @@
 ##' plot(GG2)
 ##'
 ##' ### Caribou data
-##' data(caribou)
+##' data("caribou")
 ##' carigap <- gap(caribou$window)
 ##' plot(carigap)
 gap <- function(data, from = 1, to = 10, nsim = 50, ref.dist = c("pc",

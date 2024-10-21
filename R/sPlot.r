@@ -12,10 +12,9 @@
 ##' @param main An overall title for the plot.
 ##' @param ylab A title for the y axis.
 ##' @param ... Further arguments passed to the \code{lines} call.
-##' @author Mathieu Basille \email{basille@@ase-research.org}
 ##' @export
 ##' @examples
-##' data(caribou)
+##' data("caribou")
 ##' set.seed(1)
 ##' seasons <- kmeans(caribou$window, 8, iter.max = 100)$cluster
 ##' sPlot(sSimple(seasons))

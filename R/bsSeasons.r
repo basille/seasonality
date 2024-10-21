@@ -21,8 +21,6 @@
 ##' @param ind A individual-year table indicating the name of the
 ##' individual (column \code{id}), repeated as many times as
 ##' monitoring periods.
-##' @param dataNA The data to use in case of NAs, since the k-means
-##' can not deal with NAs.
 ##' @param nclust The number of clusters to apply to the k-means.
 ##' @param iter The number of iterations of the bootstrap.
 ##' @param simplify Logical. Whether to simplify the resulting seasons.
@@ -30,7 +28,6 @@
 ##' @param tol If \code{simplify}, the tolerance to be used.
 ##' @return A list of length \code{iter}, each element of which giving
 ##' the clustering of one bootstrap iteration.
-##' @author Mathieu Basille
 ##' @return \code{bsSeasons} returns a list of vectors of the same
 ##' length as \code{seasons}, giving the seasons for each bootstrap
 ##' loop.
@@ -40,16 +37,14 @@
 ##'
 ##' \code{bsCriterion} returns a vector of the same length as
 ##' \code{seasons}, with the index of the clusters kept.
-##' @author Mathieu Basille \email{basille@@ase-research.org}
 ##' @export
 ##' @examples
 ##' ### Load the data
-##' data(caribou)
+##' data("caribou")
 ##'
-##' ### Recompute the bootstrap seasons:
-##' \dontrun{
+##' ### Compute the bootstrap seasons:
 ##' caribou$bs <- bsSeasons(data = caribou$move, ind = caribou$ind,
-##'     dataNA = caribou$window, nclust = 8)}
+##'     nclust = 8)
 ##'
 ##' ### Compute the weights, and identify the final seasons:
 ##' set.seed(1)
@@ -59,10 +54,10 @@
 ##'
 ##' ### Visualize the final seasons:
 ##' bsPlot(seasonsbs, seasons, weights, title = "Caribou")
-bsSeasons <- function(data, ind, dataNA, nclust, iter = 100,
-    simplify = FALSE, win = 6, tol = 2) {
+bsSeasons <- function(data, ind, nclust, iter = 100,
+    simplify = FALSE, win = 3, tol = 1) {
     bs <- list()
-    datanorm <- bsi <- function(i) {
+    bsi <- function(i) {
         set.seed(i)
         rd <- sort(sample(1:nrow(ind), nrow(ind), replace = TRUE))
         names <- ind[rd, ]
@@ -73,8 +68,8 @@ bsSeasons <- function(data, ind, dataNA, nclust, iter = 100,
         norm <- as.data.frame(scale(norm, center = apply(norm,
             2, min, na.rm = TRUE), scale = apply(norm, 2, function(x) diff(range(x,
             na.rm = TRUE)))))
-        if (any(is.na(norm)))
-            norm[is.na(norm)] <- data$norm[is.na(norm)]
+        ## if (any(is.na(norm)))
+        ##     norm[is.na(norm)] <- data$norm[is.na(norm)]
         set.seed(1)
         seasons <- kmeans(norm, nclust, iter.max = 100)$cluster
         if (simplify)
@@ -83,7 +78,7 @@ bsSeasons <- function(data, ind, dataNA, nclust, iter = 100,
     }
     bs <- lapply(1:iter, bsi)
     names(bs) <- 1:iter
-    return(bs)
+    bs
 }
 
 
@@ -102,12 +97,13 @@ bsWeights <- function(bsSeasons)
         return(seasons)
     }
     bsw <- unlist(lapply(bsSeasons, changes))
+
     bsw <- as.numeric(table(factor(bsw, levels = 1:365)))
     bswm2 <- c(bsw[364:365], bsw[1:363])
     bswm1 <- c(bsw[365], bsw[1:364])
     bswp1 <- c(bsw[2:365], bsw[1])
     bswp2 <- c(bsw[3:365], bsw[1:2])
-    return(bswm2 + bswm1 + bsw + bswp1 + bswp2)
+    bswm2 + bswm1 + bsw + bswp1 + bswp2
 }
 
 
@@ -131,7 +127,7 @@ bsCriterion <- function(seasons, bsWeights, threshold = 0.75)
     for (i in 1:(length(chw) - 1)) seasw[chw[i]:(chw[i + 1] -
         1)] <- i + 1
     names(seasw) <- 1:365
-    return(seasw)
+    seasw
 }
 
 

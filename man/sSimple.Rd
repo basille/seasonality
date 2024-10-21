@@ -30,12 +30,9 @@ day, the day is kept as is; otherwise, the day takes the value of
 the day before.
 }
 \examples{
-data(caribou)
+data("caribou")
 set.seed(1)
 seasons <- kmeans(caribou$window, 8, iter.max = 100)$cluster
 sPrint(seasons)
 sPrint(sSimple(seasons))
-}
-\author{
-Mathieu Basille \email{basille@ase-research.org}
 }

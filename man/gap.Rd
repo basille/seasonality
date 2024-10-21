@@ -143,7 +143,7 @@ plot(GG1)
 plot(GG2)
 
 ### Caribou data
-data(caribou)
+data("caribou")
 carigap <- gap(caribou$window)
 plot(carigap)
 }
@@ -162,7 +162,4 @@ Basille, M.; Fortin, D.; Dussault, C.; Ouellet, J.-P. & Courtois,
 R. (2012) Ecologically based definition of seasons clarifies
 predator-prey interactions. Ecography, early view, DOI:
 10.1111/j.1600-0587.2011.07367.x
-}
-\author{
-Mathieu Basille \email{basille@ase-research.org}
 }
