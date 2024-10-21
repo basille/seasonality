@@ -98,8 +98,8 @@
 ##' 10.1111/j.1541-0420.2007.00784.x
 ##'
 ##' Basille, M.; Fortin, D.; Dussault, C.; Ouellet, J.-P. & Courtois,
-##' R. (2012) Ecologically based definition of seasons clarifies
-##' predator-prey interactions. Ecography, early view, DOI:
+##' R. (2013) Ecologically based definition of seasons clarifies
+##' predator-prey interactions. Ecography, 36:220–229, DOI:
 ##' 10.1111/j.1600-0587.2011.07367.x
 ##' @export
 ##' @examples

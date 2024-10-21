@@ -16,8 +16,8 @@
 ##'     from 0 to i for each day of the year.}
 ##' }
 ##' @source Basille M., Fortin D., Dussault C., Ouellet J.-P., Courtois
-##'     R. Ecologically based definition of seasons clarifies predator-prey
-##'     interactions. Ecography, early view. DOI:
+##'     R. (2013) Ecologically based definition of seasons clarifies
+##'     predator-prey interactions. Ecography, 36:220–229. DOI:
 ##'     10.1111/j.1600-0587.2011.07367.x
 ##' @examples
 ##' ## We work with the caribou dataset.
